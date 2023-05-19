@@ -64,7 +64,7 @@ public class ClinicaControlador {
 		
 		Optional<Clinica> clinica = repositorioClinica.findById(clinicaId);	
 		
-			// Verifica se a clinica está presenta em nosso banco de dados
+			// Verifica se a clinica está presenta em nosso banco de dado
 			if( clinica.isPresent() ) {
 				
 				return ResponseEntity.ok(clinica.get());
