@@ -76,6 +76,7 @@ public class ClinicaControlador {
 	@PutMapping("/{clinicaId}")
 	public ResponseEntity<Clinica> atualizar (@PathVariable Long clinicaId, @RequestBody Clinica clinica) {
 		
+		// Armazenando a clinica localizada no bando de dados
 		Optional<Clinica> clinicaAtual = repositorioClinica.findById(clinicaId);
 		
 		if (clinicaAtual.isPresent()) {
