@@ -7,6 +7,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import com.serasa.transformese.repositorio.RepositorioClinica;
 
 @RestController // Executa os métodos e devolve as respostas
 @RequestMapping("/clinicas") // Localizar 
+@CrossOrigin(origins = "http://localhost:4200")
 public class ClinicaControlador {
 
 	@Autowired
@@ -58,7 +60,7 @@ public class ClinicaControlador {
 		
 		repositorioClinica.deleteById(clinicaId);
 	}
-	
+		
 	@GetMapping("/{clinicaId}")
 	public ResponseEntity<Clinica> buscar(@PathVariable Long clinicaId) {
 		

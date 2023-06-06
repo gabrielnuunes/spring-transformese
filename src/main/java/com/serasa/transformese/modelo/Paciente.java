@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Clinica {
+public class Paciente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,8 +17,19 @@ public class Clinica {
 	
 	@Column
 	private String nome;
-		
 	
+	@Column
+	private String cpf;
+	
+	@Column
+	private String email;
+	
+	@Column
+	private String senha;
+	
+	@Column
+	private String confirmacaoSenha;
+
 	public Long getId() {
 		return id;
 	}
@@ -35,6 +46,38 @@ public class Clinica {
 		this.nome = nome;
 	}
 
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getConfirmacaoSenha() {
+		return confirmacaoSenha;
+	}
+
+	public void setConfirmacaoSenha(String confirmacaoSenha) {
+		this.confirmacaoSenha = confirmacaoSenha;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -48,10 +91,10 @@ public class Clinica {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Clinica other = (Clinica) obj;
+		Paciente other = (Paciente) obj;
 		return Objects.equals(id, other.id);
 	}
-
 	
 	
+		
 }
